@@ -1,0 +1,20 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+
+<div class="form-container">
+    <form class="form-box" method="POST">
+        <h2>Register</h2>
+        {% csrf_token %}
+        {{form.username}}
+        {{form.first_name}}
+        {{form.last_name}}
+        {{form.email}}
+        {{form.password1}}
+        {{form.password2}}
+        <button type="submit">Register</button>   <br><br>
+        <center>Already have an account? <a href="{% url 'login' %}">Login</a></center>
+    </form>
+</div>
+
+{% endblock %}
